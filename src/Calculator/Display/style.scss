@@ -1,0 +1,25 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins';
+
+.displayContainer {
+  @include mixins.btnContainer;
+  margin-bottom: 12px;
+}
+
+.display {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 56px;
+  max-width: 232px;
+  padding-right: 8px;
+  background-color: vars.$displayBg;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.text {
+  width: 220px;
+  text-align: right;
+  white-space: nowrap;
+}

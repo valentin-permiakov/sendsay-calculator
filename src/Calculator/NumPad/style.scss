@@ -1,0 +1,10 @@
+@use '../../styles/mixins';
+
+.numContainer {
+  @include mixins.btnContainer;
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  gap: 8px;
+  margin-bottom: 12px;
+  user-select: none;
+}

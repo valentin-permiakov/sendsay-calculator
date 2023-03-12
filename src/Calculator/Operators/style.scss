@@ -1,0 +1,9 @@
+@use '../../styles/mixins';
+
+.operContainer {
+  @include mixins.btnContainer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+}

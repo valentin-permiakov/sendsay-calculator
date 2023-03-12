@@ -1,0 +1,42 @@
+@use '../../styles/mixins';
+@use '../../styles/variables' as vars;
+
+.button {
+  @include mixins.btnStyle;
+
+  &:last-child {
+    grid-column: 3/4;
+  }
+}
+
+.operatorButton {
+  @include mixins.btnStyle;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+.zeroButton {
+  @include mixins.btnStyle;
+  grid-column: 1/3;
+}
+
+.resultButton {
+  @include mixins.btnStyle;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: vars.$btnSolidBg;
+  color: white;
+
+  &.disabledBtn {
+    cursor: inherit;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      // border: 1px solid vars.$mainBtnBorder;
+      background-color: vars.$btnSolidBg;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../../styles/mixins';
+@use '../../styles/variables' as vars;
+@use 'sass:math';
+
+.selectorContainer {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 31px;
+  display: flex;
+  background-color: vars.$displayBg;
+}
+
+.selectorBtn {
+  @include mixins.btnReset;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: math.div(132px, 240px) * 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  &:first-child {
+    width: math.div(108px, 240px) * 100%;
+  }
+
+  span {
+    margin-right: 8px;
+    svg {
+      stroke: vars.$iconStroke;
+    }
+  }
+
+  &.selected {
+    background-color: white;
+    border: 1px solid vars.$mainBtnBorder;
+    border-radius: 5px;
+
+    svg {
+      stroke: vars.$btnSolidBg;
+    }
+  }
+}
