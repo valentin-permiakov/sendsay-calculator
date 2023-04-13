@@ -21,7 +21,7 @@ export const resizeText = ({
 }) => {
   let i = 12;
   let overflow = false;
-  const maxSize = 37;
+  const maxSize = 36;
 
   while (!overflow && i < maxSize) {
     element.style.fontSize = `${i}px`;

@@ -6,11 +6,10 @@ import Calculator from './Calculator/Calculator';
 import Constructor from './Constructor/Constructor';
 import { Content } from './Content/Content';
 import {
-  changeCalculator,
+  IConstrutorSliceState,
   changeConstructor,
   changeConstructorState,
   changeIsConstructor,
-  IConstrutorSliceState,
   initialParts,
 } from './store/constructorSlice';
 import { RootState } from './store/store';
@@ -42,19 +41,11 @@ export const App = () => {
 
     switch (source.droppableId) {
       case destination.droppableId:
-        if (source.droppableId === 'calculator') {
-          dispatch(
-            changeCalculator(
-              reorder(appState.calculator, source.index, destination.index)
-            )
-          );
-        } else {
-          dispatch(
-            changeConstructor(
-              reorder(appState.constructor, source.index, destination.index)
-            )
-          );
-        }
+        dispatch(
+          changeConstructor(
+            reorder(appState.constructor, source.index, destination.index)
+          )
+        );
         break;
 
       case 'calculator':

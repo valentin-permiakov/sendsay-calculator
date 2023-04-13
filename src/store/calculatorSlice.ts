@@ -35,7 +35,12 @@ export const calculatorSlice = createSlice({
       state.display = '';
     },
     showResult: (state, action: PayloadAction<string>) => {
-      state.display = action.payload;
+      if (Number(action.payload) === Infinity) {
+        state.display = 'Не определено';
+      } else {
+        const number = parseFloat(Number(action.payload).toFixed(5));
+        state.display = number.toString();
+      }
     },
   },
 });

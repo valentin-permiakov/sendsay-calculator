@@ -25,11 +25,7 @@ const Display: React.FC<DisplayProps> = ({ isTemplate }) => {
     <div className={styles.displayContainer} ref={refContainer}>
       <div className={styles.display} id="display">
         <div className={styles.text} ref={refResult}>
-          {isTemplate
-            ? '0'
-            : Number(result) === Infinity
-            ? 'Не определено'
-            : parseFloat(result)}
+          {isTemplate ? '0' : result}
         </div>
       </div>
     </div>
